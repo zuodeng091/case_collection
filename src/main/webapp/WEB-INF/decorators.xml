@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts">
+    <excludes>
+        <pattern>/static/*</pattern>
+        <pattern>/ueditor/*</pattern>
+    </excludes>
+    <decorator name="frame" page="default.jsp">
+        <pattern>/frame</pattern>
+    </decorator>
+    <decorator name="default" page="include.jsp">
+        <!-- 用户基本信息 -->
+        <pattern>/user/toList</pattern>
+        <pattern>/user/toAdd</pattern>
+        <pattern>/user/toUpdate</pattern>
+        <pattern>/user/manager</pattern>
+        <pattern>/user/toResetPassword</pattern>
+        <pattern>/user/findPassword/toFindPassword</pattern>
+
+        <!--字典维护-->
+        <pattern>/dictionary/toList</pattern>
+        <pattern>/dictionary/toEdit</pattern>
+        </decorator>
+</decorators>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+    <!-- redis 配置 -->
+    <bean id="redisPoolFactory" name="redisPoolFactory" class="com.casecollection.backend.framework.cache.RedisPoolFactory" factory-method="init"
+        destroy-method="close">
+        <constructor-arg value="classpath:config/redis.xml" />
+    </bean>
+	<bean id="redis_data_pool" factory-bean="redisPoolFactory"
+		factory-method="getClientProxy">
+		<constructor-arg value="data_pool" />
+	</bean>
+</beans>
